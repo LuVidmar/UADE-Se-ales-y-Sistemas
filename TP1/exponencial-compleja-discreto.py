@@ -28,9 +28,9 @@ print('señal x[n]: ')
 print(senal)
 
 # Gráfica
-plt.stem(x, y)
 plt.axhline(0, color='gray')
 plt.axvline(0, color='gray')
+plt.stem(x, y)
 plt.ylabel('Imaginario')
 plt.xlabel('Real')
 plt.show()

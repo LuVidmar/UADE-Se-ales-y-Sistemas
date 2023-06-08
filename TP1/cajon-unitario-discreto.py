@@ -25,7 +25,7 @@ print('señal x[n]: ')
 print(senal)
 
 # Gráficas
-plt.stem(n, senal)
 plt.xlabel('n')
 plt.ylabel('señal x[n]')
+plt.stem(n, senal)
 plt.show()

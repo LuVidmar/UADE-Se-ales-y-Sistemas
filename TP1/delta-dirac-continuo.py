@@ -32,9 +32,9 @@ print('señal: x(t) ')
 print(senal)
 
 # Gráfica
-plt.plot(ti,senal, color="red")
 plt.axhline(0, color='gray')
 plt.axvline(0, color='gray')
+plt.plot(ti,senal, color="red")
 plt.xlabel('t')
 plt.ylabel('señal x[(t)]')
 plt.show()

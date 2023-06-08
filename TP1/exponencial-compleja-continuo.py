@@ -29,9 +29,9 @@ print('señal: x(t) ')
 print(senal)
 
 # Gráfica
-plt.plot(x,y, color="red", marker='.')
 plt.axhline(0, color='gray')
 plt.axvline(0, color='gray')
+plt.plot(x,y, color="red", marker='.')
 plt.ylabel('Imaginario')
 plt.xlabel('Real')
 plt.show()
