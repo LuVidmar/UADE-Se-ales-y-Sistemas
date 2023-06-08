@@ -1,23 +1,20 @@
-# Señales discretas
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 
-# INGRESO - parámetros
-w0 = 2*np.pi/12
-fx = lambda n: np.sin(w0*n)
-n0 = 0
-m = 20
+# --- INGRESO ---
 
-# PROCEDIMIENTO
-# vector n discreto [n,m)
-n = np.arange(n0,m+1,1)
+n0 = -10 # tiempo inicial
+m = 20 # cantidad de muestras
+
+# --- PROCEDIMIENTO ---
+
+# vector n discreto [n0,n0+m]
+n = np.arange(n0,n0 + m,1)
 
 # señal
-senal = fx(n)
+senal = np.heaviside(n, 1)
 
-# SALIDA
+# Imprimo
 np.set_printoptions(precision=4)
 print('n: ')
 print(n)
