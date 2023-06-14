@@ -29,3 +29,7 @@
 3.  Desarrolle un de Scritps en el lenguaje de programación PYTHON, el cual describa y grafique una señal de potencia.
 
 4.  Desarrolle un de Scritps en el lenguaje de programación PYTHON, el cual describa y grafique una señal de energía.
+
+## Resolución
+
+[Notebook](./tp1.ipynb)
