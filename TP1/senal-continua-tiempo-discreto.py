@@ -26,7 +26,6 @@ print(senal)
 # Gráfica
 plt.axhline(0, color='gray')
 plt.axvline(0, color='gray')
-plt.plot(ti,senal, color="red")
 plt.stem(ti, senal)
 plt.xlabel('t')
 plt.ylabel('señal x[(t)]')
