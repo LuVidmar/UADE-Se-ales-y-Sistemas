@@ -14,7 +14,7 @@ dt = (tn-t0)/n # intervalo de tiempo
 ti = np.arange(t0,tn,dt) # vector de tiempo
 
 # Senal
-senal = np.exp(ti)
+senal = np.sin(ti)
 
 # Imprimo
 np.set_printoptions(precision = 4)
