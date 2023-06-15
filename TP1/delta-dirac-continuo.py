@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 
 # --- FUNCIONES ---
 def ddf(x,sig):
@@ -10,7 +11,7 @@ def ddf(x,sig):
     return val
 
 # --- INGRESO ---
-
+arg = sys.argv[1]
 t0 = -1 # tiempo inicial
 tn = 1 # tiempo final
 n = 1000 # cantidad de muestras
@@ -26,10 +27,11 @@ senal = [ddf(t, 100) for t in ti]
 
 # Imprimo
 np.set_printoptions(precision = 4)
-print('tiempo: ')
-print(ti)
-print('señal: x(t) ')
-print(senal)
+if arg != 'no-print':
+    print('tiempo: ')
+    print(ti)
+    print('señal: x(t) ')
+    print(senal)
 
 # Gráfica
 plt.axhline(0, color='gray')

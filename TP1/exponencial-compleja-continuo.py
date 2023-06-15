@@ -1,8 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 
 # --- INGRESO ---
-
+arg = sys.argv[1]
 t0 = -1 # tiempo inicial
 tn = 1 # tiempo final
 n = 100 # cantidad de muestras
@@ -23,10 +24,11 @@ y = [ele.imag for ele in senal]
 
 # Imprimo
 np.set_printoptions(precision = 4)
-print('tiempo: ')
-print(ti)
-print('señal: x(t) ')
-print(senal)
+if arg != 'no-print':
+    print('tiempo: ')
+    print(ti)
+    print('señal: x(t) ')
+    print(senal)
 
 # Gráfica
 plt.axhline(0, color='gray')

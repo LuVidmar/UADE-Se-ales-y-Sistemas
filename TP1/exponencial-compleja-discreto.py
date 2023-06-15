@@ -1,8 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 
 # --- INGRESO ---
-
+arg = sys.argv[1]
 n0 = -10 # discreto inicial
 m = 20 # cantidad de muestras
 
@@ -22,10 +23,11 @@ y = [ele.imag for ele in senal]
 
 # Imprimo
 np.set_printoptions(precision=4)
-print('n: ')
-print(n)
-print('señal x[n]: ')
-print(senal)
+if arg != 'no-print':
+    print('n: ')
+    print(n)
+    print('señal x[n]: ')
+    print(senal)
 
 # Gráfica
 plt.axhline(0, color='gray')

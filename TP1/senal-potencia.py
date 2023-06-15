@@ -1,11 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 
 def square(t):
     return np.heaviside(t,1) - np.heaviside(t-1,1)
 
 # --- INGRESO ---
-
+arg = sys.argv[1]
 t0 = -20 # tiempo inicial
 tn = 20 # tiempo final
 n = 1000 # cantidad de muestras
@@ -23,10 +24,11 @@ for i in range(t0, tn, 5):
 
 # Imprimo
 np.set_printoptions(precision = 4)
-print('tiempo: ')
-print(ti)
-print('señal: x(t) ')
-print(senal)
+if arg != 'no-print':
+    print('tiempo: ')
+    print(ti)
+    print('señal: x(t) ')
+    print(senal)
 
 # Gráfica
 plt.axhline(0, color='gray')

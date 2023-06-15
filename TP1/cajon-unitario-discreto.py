@@ -1,11 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 
 def square(n):
     return np.heaviside(n,1) - np.heaviside(n-1.5,1)
 
 # --- INGRESO ---
-
+arg = sys.argv[1]
 n0 = -1 # tiempo inicial
 m = 4 # cantidad de muestras
 
@@ -19,10 +20,11 @@ senal = square(n)
 
 # Imprimo
 np.set_printoptions(precision=4)
-print('n: ')
-print(n)
-print('señal x[n]: ')
-print(senal)
+if arg != 'no-print':
+    print('n: ')
+    print(n)
+    print('señal x[n]: ')
+    print(senal)
 
 # Gráficas
 plt.xlabel('n')

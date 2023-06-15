@@ -1,8 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 
 # --- INGRESO ---
-
+arg = sys.argv[1]
 n0 = -10 # tiempo inicial
 m = 20 # cantidad de muestras
 
@@ -16,10 +17,11 @@ senal = np.heaviside(n, 1)
 
 # Imprimo
 np.set_printoptions(precision=4)
-print('n: ')
-print(n)
-print('señal x[n]: ')
-print(senal)
+if arg != 'no-print':
+    print('n: ')
+    print(n)
+    print('señal x[n]: ')
+    print(senal)
 
 # Gráficas
 plt.xlabel('n')

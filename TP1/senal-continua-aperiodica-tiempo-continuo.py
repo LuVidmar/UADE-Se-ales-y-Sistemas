@@ -1,8 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 
 # --- INGRESO ---
-
+arg = sys.argv[1]
 t0 = -2 * np.pi # tiempo inicial
 tn = 2 * np.pi # tiempo final
 n = 100 # cantidad de muestras
@@ -18,10 +19,11 @@ senal = np.linspace(t0, tn, n)
 
 # Imprimo
 np.set_printoptions(precision = 4)
-print('tiempo: ')
-print(ti)
-print('señal: x(t) ')
-print(senal)
+if arg != 'no-print':
+    print('tiempo: ')
+    print(ti)
+    print('señal: x(t) ')
+    print(senal)
 
 # Gráfica
 plt.axhline(0, color='gray')
