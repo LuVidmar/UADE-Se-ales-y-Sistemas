@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import sys
 
 """
-Para corroborar si un sistema es invariable,
+Para corroborar si un sistema es variable,
 debo verificar que al desplazar la entrada en el tiempo,
 la salida se desplaza en la misma cantidad.
 
@@ -15,7 +15,7 @@ x(t - t0) -> y(t - t0)
 x = lambda t: np.heaviside(t, 1) # u(t)
 
 # Defino la salida
-y = lambda t: 10 * x(t)
+y = lambda t: t * x(t)
 
 # Defino el tiempo
 t = np.linspace(-0.5, 3, 200) # 200 muestras entre -0.5 y 3
@@ -23,7 +23,7 @@ t0 = 1/2 # desplazamiento
 
 # Veamos si el sistema es variable
 xd = lambda t: x(t-t0)
-y1 = lambda t: 10 * xd(t)
+y1 = lambda t: t * xd(t)
 y2 = lambda t: y(t-t0)
 
 # Imprimo valores
@@ -46,6 +46,6 @@ plt.legend()
 plt.show()
 
 """
-El sistema es invariable, ya que:
-y(x(t - t0)) == y(t - t0)
+El sistema es variable, ya que:
+y(x(t - t0)) != y(t - t0)
 """
