@@ -10,3 +10,7 @@
    5. Sistemas con entradas escaladas.
    6. Sistemas con entradas sumadas.
    7. Sistemas con entradas escaladas y sumadas.
+
+## Resolución
+
+[Notebook](./tp2.ipynb)
