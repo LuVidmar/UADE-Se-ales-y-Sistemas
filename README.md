@@ -9,5 +9,5 @@ Este repositorio contiene los trabajos practicos de la materia Senales y Sistema
 
 ## Realizacion
 
-Para realizar los trabajos se crean scripts en python que generan las imagenes y se utilizan jupyter notebooks para mostrar los resultados.
+Para realizar los trabajos se crean scripts en Python que generan las imagenes y se utilizan Jupyter notebooks para mostrar los resultados.
 Luego se exportan los notebooks a markdown para poder visualizarlos en github.

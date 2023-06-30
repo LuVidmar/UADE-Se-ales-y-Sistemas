@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import sys
 
 # --- INGRESO ---
-arg = sys.argv[1]
+if len(sys.argv) > 1:
+    arg = sys.argv[1]
 t0 = -2 * np.pi # tiempo inicial
 tn = 2 * np.pi # tiempo final
 n = 100 # cantidad de muestras

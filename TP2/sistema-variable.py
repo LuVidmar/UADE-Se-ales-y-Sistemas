@@ -27,11 +27,12 @@ y1 = lambda t: t * xd(t)
 y2 = lambda t: y(t-t0)
 
 # Imprimo valores
-if sys.argv[1] != 'no-print':
-    print('y(x(t - t0))')
-    print(y1(t))
-    print('y(t - t0)')
-    print(y2(t))
+if len(sys.argv) > 1:
+    if sys.argv[1] != 'no-print':
+        print('y(x(t - t0))')
+        print(y1(t))
+        print('y(t - t0)')
+        print(y2(t))
 
 # Grafico
 plt.xlabel('t')

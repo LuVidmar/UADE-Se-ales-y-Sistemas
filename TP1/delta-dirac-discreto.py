@@ -7,7 +7,8 @@ def ddf(n):
     return 1 if n == 0 else 0
 
 # --- INGRESO ---
-arg = sys.argv[1]
+if len(sys.argv) > 1:
+    arg = sys.argv[1]
 n0 = -1 # tiempo inicial
 m = 3 # cantidad de muestras
 

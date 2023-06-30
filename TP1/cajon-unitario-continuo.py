@@ -6,7 +6,8 @@ def square(t):
     return np.heaviside(t,1) - np.heaviside(t-1,1)
 
 # --- INGRESO ---
-arg = sys.argv[1]
+if len(sys.argv) > 1:
+    arg = sys.argv[1]
 t0 = -1 # tiempo inicial
 tn = 2 # tiempo final
 n = 500 # cantidad de muestras

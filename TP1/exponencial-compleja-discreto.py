@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import sys
 
 # --- INGRESO ---
-arg = sys.argv[1]
+if len(sys.argv) > 1:
+    arg = sys.argv[1]
 n0 = -10 # discreto inicial
 m = 20 # cantidad de muestras
 
