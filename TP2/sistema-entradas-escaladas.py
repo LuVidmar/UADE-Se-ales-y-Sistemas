@@ -4,7 +4,7 @@ import sys
 
 """
 Definimos:
-1. Entrada del sistema: x(t) un cajon de 1 de ancho desde t=0
+1. Entrada del sistema: x(t) un cajon de 1 de ancho centrado en t=0
 2. Sistema: h(t) un triangulo de 1 de ancho y 1 de alto desde t=0
 3. Salida del sistema: y(t) = {h(t)*x(t)} convolucion de h(t) y x(t)
 """
