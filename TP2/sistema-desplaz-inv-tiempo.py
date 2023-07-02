@@ -32,10 +32,10 @@ m = 200 # muestras
 t = np.linspace(-2, 2, m) # m muestras entre -2 y 2
 t0 = 0.5 # desplazamiento
 
-# Sistema sin desplazamiento
+# Sistema sin inversion de tiempo
 y1 = np.convolve(x(t), h(t),'full')
 
-# Sistema con desplazamiento
+# Sistema con inversion de tiempo
 y2 = np.convolve(x(t), h(t0-t),'full')
 
 # Defino el tiempo de convolución
@@ -46,7 +46,7 @@ if len(sys.argv) > 1:
     if sys.argv[1] != 'no-print':
         print('y(t)')
         print(y1)
-        print('yd(t)')
+        print('yi(t)')
         print(y2)
 
 # Grafico

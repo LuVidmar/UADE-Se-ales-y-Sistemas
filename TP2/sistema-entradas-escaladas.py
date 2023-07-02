@@ -32,10 +32,10 @@ m = 200 # muestras
 t = np.linspace(-2, 2, m) # m muestras entre -2 y 2
 k = 0.5 # desplazamiento
 
-# Sistema sin desplazamiento
+# Sistema sin escalamiento
 y1 = np.convolve(x(t), h(t),'full')
 
-# Sistema con desplazamiento
+# Sistema con escalamiento
 y2 = np.convolve(x(t), h(k*t),'full')
 
 # Defino el tiempo de convolución
@@ -46,7 +46,7 @@ if len(sys.argv) > 1:
     if sys.argv[1] != 'no-print':
         print('y(t)')
         print(y1)
-        print('yd(t)')
+        print('ye(t)')
         print(y2)
 
 # Grafico
@@ -60,7 +60,7 @@ ax1.plot(t1, h(t1), label='h(t)', color='red')
 ax1.plot(t1, h(k*t1), label='h(k*t)', color='blue')
 ax1.plot(t1, x(t1), label='x(t)', color='green')
 ax2.plot(t1, y1, label='y(t) = {h(t)*x(t)}', color='red', linestyle='--')
-ax2.plot(t1, y2, label='yd(t) = {h(t)*x(k*t)}', color='blue', linestyle='--')
+ax2.plot(t1, y2, label='yd(t) = {h(k*t)*x(t)}', color='blue', linestyle='--')
 
 ax1.set_xlabel("t")
 ax1.set_ylabel("x,h")

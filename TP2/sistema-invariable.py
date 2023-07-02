@@ -5,7 +5,7 @@ import sys
 """
 Para corroborar si un sistema es invariable,
 debo verificar que al desplazar la entrada en el tiempo,
-la salida se desplaza en la misma cantidad.
+la salida no se desplaza en la misma cantidad.
 
 x(t) -> y(t)
 x(t - t0) -> y(t - t0)

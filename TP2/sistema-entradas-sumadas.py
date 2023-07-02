@@ -35,9 +35,10 @@ h = lambda t: triangle(t)
 m = 200 # muestras
 t = np.linspace(-2, 2, m) # m muestras entre -2 y 2
 
-# Sistema con desplazamiento
+# Sistema sin suma
 y0 = np.convolve(x1(t), h(t),'full')
 y1 = np.convolve(x2(t), h(t),'full')
+# Sistema con suma
 y2 = np.convolve(x1(t)+x2(t), h(t),'full')
 
 # Defino el tiempo de convolución
@@ -48,7 +49,7 @@ if len(sys.argv) > 1:
     if sys.argv[1] != 'no-print':
         print('y(t)')
         print(y1)
-        print('yd(t)')
+        print('ys(t)')
         print(y2)
 
 # Grafico
