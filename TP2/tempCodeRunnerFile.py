@@ -1,1 +1,1 @@
-len(sys.argv)
+abs
