@@ -30,13 +30,13 @@ h = lambda t: triangle(t)
 # Defino el tiempo
 m = 200 # muestras
 t = np.linspace(-2, 2, m) # m muestras entre -2 y 2
-t0 = 0.5 # desplazamiento
+k = 0.5 # desplazamiento
 
 # Sistema sin desplazamiento
 y1 = np.convolve(x(t), h(t),'full')
 
 # Sistema con desplazamiento
-y2 = np.convolve(x(t), h(t0-t),'full')
+y2 = np.convolve(x(t), h(k*t),'full')
 
 # Defino el tiempo de convolución
 t1 = np.linspace(-2, 2, 2*m-1) # 2m-1 muestras entre -2 y 2
@@ -57,10 +57,10 @@ ax1.axvline(0, color='gray')
 ax1.axhline(0, color='gray')
 
 ax1.plot(t1, h(t1), label='h(t)', color='red')
-ax1.plot(t1, h(t0-t1), label='h(t0-t)', color='blue')
+ax1.plot(t1, h(k*t1), label='h(k*t)', color='blue')
 ax1.plot(t1, x(t1), label='x(t)', color='green')
 ax2.plot(t1, y1, label='y(t) = {h(t)*x(t)}', color='red', linestyle='--')
-ax2.plot(t1, y2, label='yd(t) = {h(t0-t)*x(t)}', color='blue', linestyle='--')
+ax2.plot(t1, y2, label='yd(t) = {h(t)*x(k*t)}', color='blue', linestyle='--')
 
 ax1.set_xlabel("t")
 ax1.set_ylabel("x,h")
