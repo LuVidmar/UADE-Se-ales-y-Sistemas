@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import sys
 
 # --- INGRESO ---
+arg = ""
 if len(sys.argv) > 1:
     arg = sys.argv[1]
 t0 = -2 * np.pi # tiempo inicial

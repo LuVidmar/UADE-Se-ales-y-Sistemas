@@ -11,6 +11,7 @@ def ddf(x,sig):
     return val
 
 # --- INGRESO ---
+arg = ""
 if len(sys.argv) > 1:
     arg = sys.argv[1]
 t0 = -1 # tiempo inicial
@@ -24,7 +25,7 @@ dt = (tn-t0)/n # intervalo de tiempo
 ti = np.arange(t0,tn,dt) # vector de tiempo
 
 # Senal
-senal = [ddf(t, 100) for t in ti]
+senal = [ddf(t, 10000000000) for t in ti]
 
 # Imprimo
 np.set_printoptions(precision = 4)

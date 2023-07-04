@@ -3,12 +3,13 @@ import matplotlib.pyplot as plt
 import sys
 
 # --- INGRESO ---
+arg = ""
 if len(sys.argv) > 1:
     arg = sys.argv[1]
 t0 = -2 * np.pi # tiempo inicial
 tn = 2 * np.pi # tiempo final
 n = 1000 # cantidad de muestras
-k = 3 # frecuencia
+k = 1/3 # frecuencia
 
 # --- PROCEDIMIENTO ---
 

@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import sys
 
 # --- INGRESO ---
+arg = ""
 if len(sys.argv) > 1:
     arg = sys.argv[1]
 n0 = -1 # tiempo inicial

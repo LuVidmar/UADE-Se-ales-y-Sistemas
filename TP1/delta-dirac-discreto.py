@@ -1,12 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
 import sys
 
 # --- FUNCIONES ---
 def ddf(n):
-    return 1 if n == 0 else 0
+    return 10000000000 if n == 0 else 0
 
 # --- INGRESO ---
+arg = ""
 if len(sys.argv) > 1:
     arg = sys.argv[1]
 n0 = -1 # tiempo inicial
@@ -31,5 +33,6 @@ if arg != 'no-print':
 # Gráficas
 plt.xlabel('n')
 plt.ylabel('señal x[n]')
+plt.gca().xaxis.set_major_locator(mticker.MultipleLocator(1))
 plt.stem(n, senal)
 plt.show()

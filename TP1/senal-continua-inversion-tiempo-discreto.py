@@ -1,19 +1,19 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
 import sys
 
 # --- INGRESO ---
+arg = ""
 if len(sys.argv) > 1:
     arg = sys.argv[1]
-t0 = -2 * np.pi # tiempo inicial
-tn = 2 * np.pi # tiempo final
-n = 30 # cantidad de muestras
+n0 = -5 # tiempo inicial
+m = 8 # cantidad de muestras
 
 # --- PROCEDIMIENTO ---
 
-# vector de tiempo
-dt = (tn-t0)/n # intervalo de tiempo
-ti = np.arange(t0,tn,dt) # vector de tiempo
+# vector de tiempo discreto
+ti = np.arange(n0,n0+m)
 
 # Senal
 senal = np.exp(-ti)
@@ -30,6 +30,7 @@ if arg != 'no-print':
 plt.axhline(0, color='gray')
 plt.axvline(0, color='gray')
 plt.stem(ti, senal)
+plt.gca().xaxis.set_major_locator(mticker.MultipleLocator(1))
 plt.xlabel('t')
 plt.ylabel('señal x[(t)]')
 plt.show()

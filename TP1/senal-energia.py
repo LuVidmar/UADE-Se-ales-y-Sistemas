@@ -6,6 +6,7 @@ def square(t):
     return np.heaviside(t,1) - np.heaviside(t-1,1)
 
 # --- INGRESO ---
+arg = ""
 if len(sys.argv) > 1:
     arg = sys.argv[1]
 t0 = -20 # tiempo inicial
