@@ -29,10 +29,10 @@ y = np.convolve(f(n), g(n),'full')
 n1 = np.linspace(-1, 3, 2*m-1) # 2m-1 muestras entre -2 y 2
 
 # Imprimo valores
-if len(sys.argv) > 1:
-    if sys.argv[1] != 'no-print':
-        print('y[n]')
-        print(y)
+#if len(sys.argv) > 1:
+#    if sys.argv[1] != 'no-print':
+#        print('y[n]')
+#        print(y)
 
 # Grafico
 fig, ax1 = plt.subplots(figsize=(8, 8))

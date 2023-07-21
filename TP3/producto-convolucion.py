@@ -23,16 +23,18 @@ m = 500 # muestras
 t = np.linspace(-1, 3, m) # m muestras entre -2 y 2
 
 # Convolucion
-y = np.convolve(f(t), g(t),'full')
+#y = np.convolve(f(t), g(t),'full')
 
 # Defino el tiempo de convolución
 t1 = np.linspace(-1, 3, 2*m-1) # 2m-1 muestras entre -2 y 2
+dt = t1[1] - t1[0]
+y  = np.convolve(f(t), g(t), 'full') * dt * 10
 
 # Imprimo valores
-if len(sys.argv) > 1:
-    if sys.argv[1] != 'no-print':
-        print('y(t)')
-        print(y)
+#if len(sys.argv) > 1:
+#    if sys.argv[1] != 'no-print':
+#        print('y(t)')
+#        print(y)
 
 # Grafico
 fig, ax1 = plt.subplots(figsize=(8, 8))
