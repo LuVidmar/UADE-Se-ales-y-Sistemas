@@ -7,34 +7,53 @@ Basado en el ejemplo que se muestra en:
 https://es.wikipedia.org/wiki/Convoluci%C3%B3n
 
 Definimos:
-f(n) = square(n) = u(n+1/2) - u(n-1/2)
-g(n) = e ^ -(n-1) * u(n)
+f(t) = square(t) = u(t+1/2) - u(t-1/2)
+g(t) = e ^ -(t-1) * u(t)
 """
 
-def square(n):
-    return np.heaviside(n+1/2, 1) - np.heaviside(n-1/2, 1)
+def square(t):
+    return np.heaviside(t+1/2, 1) - np.heaviside(t-1/2, 1)
 
 # Defino las funciones a convolucionar
-f = lambda n: square(n)
-g = lambda n: np.exp(-n+1) * np.heaviside(n, 1)
+f = lambda t: square(t)
+g = lambda t: np.exp(-t+1) * np.heaviside(t, 1)
 
 # Defino el tiempo
-m = 20 # muestras
-n = np.linspace(-1, 3, m) # m muestras entre -2 y 2
+m = 10 - 1 # muestras por división
+dn = 1/m
 
-# Convolucion
-y = np.convolve(f(n), g(n),'full')
+inicio = -5
+fin = 5
 
-# Defino el tiempo de convolución
-n1 = np.linspace(-1, 3, 2*m-1) # 2m-1 muestras entre -2 y 2
+n = np.arange(inicio, fin + dn, dn)
 
-# Imprimo valores
-#if len(sys.argv) > 1:
-#    if sys.argv[1] != 'no-print':
-#        print('y[n]')
-#        print(y)
-
+y  = np.convolve(f(n), g(n), 'same') * (dn)
+'''
 # Grafico
+fig, ax1 = plt.subplots(figsize=(8, 8))
+ax2 = ax1.twinx()
+
+ax1.axvline(0, color='gray')
+ax1.axhline(0, color='gray')
+
+ax1.plot(t, f(t), label='f(t)', color='red')
+ax1.plot(t, g(t), label='g(t)', color='blue')
+ax2.plot(t, y, label='y(t) = {f*g}(t)', color='green')
+
+ax1.set_xlabel("t")
+ax1.set_ylabel("f,g")
+ax1.tick_params(axis="y")
+ax2.set_ylabel("y")
+ax2.tick_params(axis="y")
+
+plt.tight_layout()
+
+plt.axvline(x=0.5, ls='--')
+
+fig.legend()
+plt.show()
+'''
+
 fig, ax1 = plt.subplots(figsize=(8, 8))
 ax2 = ax1.twinx()
 
@@ -49,7 +68,7 @@ stem2 = ax1.stem(n, g(n), label='g[n]')
 stem2.markerline.set_color('green')
 stem2.stemlines.set_color('green')
 
-stem3 = ax2.stem(n1, y, label='y[n] = {f*g}[n]')
+stem3 = ax2.stem(n, y, label='y[n] = {f*g}[n]')
 stem3.markerline.set_color('red')
 stem3.stemlines.set_color('red')
 

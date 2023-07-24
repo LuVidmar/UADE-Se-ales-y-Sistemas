@@ -20,21 +20,14 @@ g = lambda t: np.exp(-t+1) * np.heaviside(t, 1)
 
 # Defino el tiempo
 m = 500 # muestras
-t = np.linspace(-1, 3, m) # m muestras entre -2 y 2
+dt = 1/m
 
-# Convolucion
-#y = np.convolve(f(t), g(t),'full')
+inicio = -5
+fin = 5
 
-# Defino el tiempo de convolución
-t1 = np.linspace(-1, 3, 2*m-1) # 2m-1 muestras entre -2 y 2
-dt = t1[1] - t1[0]
-y  = np.convolve(f(t), g(t), 'full') * dt * 10
+t = np.arange(inicio, fin + dn, dn)
 
-# Imprimo valores
-#if len(sys.argv) > 1:
-#    if sys.argv[1] != 'no-print':
-#        print('y(t)')
-#        print(y)
+y  = np.convolve(f(t), g(t), 'same') * dt
 
 # Grafico
 fig, ax1 = plt.subplots(figsize=(8, 8))
@@ -45,13 +38,17 @@ ax1.axhline(0, color='gray')
 
 ax1.plot(t, f(t), label='f(t)', color='red')
 ax1.plot(t, g(t), label='g(t)', color='blue')
-ax2.plot(t1, y, label='y(t) = {f*g}(t)', color='green')
+ax2.plot(t, y, label='y(t) = {f*g}(t)', color='green')
 
 ax1.set_xlabel("t")
 ax1.set_ylabel("f,g")
 ax1.tick_params(axis="y")
 ax2.set_ylabel("y")
 ax2.tick_params(axis="y")
+
+plt.tight_layout()
+
+plt.axvline(x=0.5, ls='--')
 
 fig.legend()
 plt.show()
