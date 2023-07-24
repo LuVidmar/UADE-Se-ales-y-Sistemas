@@ -49,7 +49,7 @@ if len(sys.argv) > 1:
 #Figura 1
 
 #Defino la figura y los subplots
-fig1, ax1 = plt.subplots(4,1, figsize=(8, 8))
+fig1, ax1 = plt.subplots(5,1, figsize=(8, 10))
 
 #Linea de los ejes
 ax1[0].axvline(0, color='gray')
@@ -60,6 +60,9 @@ ax1[2].axvline(0, color='gray')
 ax1[2].axhline(0, color='gray')
 ax1[3].axvline(0, color='gray')
 ax1[3].axhline(0, color='gray')
+ax1[4].axvline(0, color='gray')
+ax1[4].axhline(0, color='gray')
+
 
 #Imprimo h1, le seteo el titulo, los ejes, la leyenda y una grilla
 ax1[0].plot(t, h1(t), label='h1(t)', color='blue')
@@ -68,7 +71,7 @@ ax1[0].legend()
 ax1[0].grid()
 
 #Imprimo h2, le seteo los ejes, la leyenda y una grilla
-ax1[1].plot(t, h2(t), label='h2(t)', color='red')
+ax1[1].plot(t, h2(t), label='h2(t)', color='brown')
 ax1[1].legend()
 ax1[1].grid()
 
@@ -78,9 +81,14 @@ ax1[2].legend()
 ax1[2].grid()
 
 #Imprimo he, le seteo los ejes, la leyenda y una grilla
-ax1[3].plot(t, he(t), label='he(t)', color='blue')
+ax1[3].plot(t, he(t), label='he(t)', color='violet')
 ax1[3].legend()
 ax1[3].grid()
+
+#Imprimo he, le seteo los ejes, la leyenda y una grilla
+ax1[4].plot(t, x(t), label='x(t)', color='red')
+ax1[4].legend()
+ax1[4].grid()
 
 #Seteo nombre de los ejes y titulo de cada subplot
 ax1[0].set_title('h1(t) = u(t)-u(t-1)')
@@ -95,6 +103,9 @@ ax1[2].set_xlabel("t")
 ax1[3].set_title('he(t) = h1 + h2 + h3')
 ax1[3].set_ylabel("h")
 ax1[3].set_xlabel("t")
+ax1[4].set_title('x(t) = e^(-t+1).u(t)')
+ax1[4].set_ylabel("x")
+ax1[4].set_xlabel("t")
 
 #Figura 2
 
