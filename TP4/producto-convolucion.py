@@ -6,20 +6,14 @@ import sys
 Basado en el ejemplo que se muestra en:
 https://es.wikipedia.org/wiki/Convoluci%C3%B3n
 
-Definimos:
-f(t) = square(t) = u(t+1/2) - u(t-1/2)
-g(t) = e ^ -(t-1) * u(t)
 """
 
-def square(t):
-    return np.heaviside(t+1/2, 1) - np.heaviside(t-1/2, 1)
-
 # Defino las funciones a convolucionar
-x = lambda t: np.exp(-t+1) * np.heaviside(t, 1)
+x = lambda t: np.exp(-t+1) * np.heaviside(t, 1) #Senal principal, exponencial decreciente, que arranca en x=0
 h1 = lambda t: np.heaviside(t, 1) - np.heaviside(t-1, 1) #Cajon unitario, altura 1, entre 0 y 1
 h2 = lambda t: -np.heaviside(t-1, 1) + np.heaviside(t-2, 1) #Cajon unitario, altura -1, entre 1 y 2
 h3 = lambda t: (t-2) * np.heaviside(t-2, 1) - (t-3) * np.heaviside(t-3, 1) - np.heaviside(t-3, 1) #Rampa unitaria, con pendiente 1, entre 2 y 3
-he = lambda t: h1(t) + h2(t) + h3(t)
+he = lambda t: h1(t) + h2(t) + h3(t) #Senal con la cual se convoluciona la senal de entrada, suma de las tres anteriores
 
 # Defino el tiempo
 m = 500 # muestras
