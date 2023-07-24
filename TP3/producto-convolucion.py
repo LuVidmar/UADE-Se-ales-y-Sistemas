@@ -25,7 +25,7 @@ dt = 1/m
 inicio = -5
 fin = 5
 
-t = np.arange(inicio, fin + dn, dn)
+t = np.arange(inicio, fin + dt, dt)
 
 y  = np.convolve(f(t), g(t), 'same') * dt
 
