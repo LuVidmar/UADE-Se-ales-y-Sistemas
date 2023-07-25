@@ -19,8 +19,8 @@ f = lambda n: square(n)
 g = lambda n: np.exp(-n+1) * np.heaviside(n, 1)
 
 # Defino el tiempo
-m = 20 # muestras
-n = np.linspace(-1, 3, m) # m muestras entre -2 y 2
+m = 20  # muestras
+n = np.linspace(-1, 3, m) # m muestras entre -2 y 2 *
 
 # Convolucion
 y = np.convolve(f(n), g(n),'full')
