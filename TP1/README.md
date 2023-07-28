@@ -2,7 +2,7 @@
 
 ## Consignas
 
-1. Desarrolle una serie de Scritps en el lunguaje de programación PYTHON, los cuales describan y grafiquen las siguientes funciones (señales conocidas) vistas en CLASE:
+1. Desarrolle una serie de scripts en el lunguaje de programación *Python*, los cuales describan y grafiquen las siguientes funciones (señales conocidas) vistas en CLASE:
    1. Señal Escalón Unitario en tiempo contínuo.
    2. Señal Escalón Unitario en tiempo discreto.
    3. Señal Cajón Unitario en tiempo contínuo.
@@ -12,7 +12,7 @@
    7. Todas las variantes de la Señal Exponencial en tiempo contínuo.
    8. Todas las variantes de la Señal Exponencial en tiempo discreto.
 
-2. Desarrolle una serie de Scritps en el lenguaje de programación PYTHON, los cuales describan y grafiquen las siguientes señales:
+2. Desarrolle una serie de scripts en el lenguaje de programación *Python*, los cuales describan y grafiquen las siguientes señales:
    1. Una Señal continua en tiempo contínuo.
    2. Una Señal continua en tiempo discreto.
    3. Una Señal continua periódica en tiempo contínuo.
@@ -26,10 +26,10 @@
    11. Una Señal continua con inversión en el tiempo en tiempo contínuo.
    12. Una Señal continua con inversión en el tiempo en tiempo discreto.
    
-3.  Desarrolle un de Scritps en el lenguaje de programación PYTHON, el cual describa y grafique una señal de potencia.
+3.  Desarrolle un de scripts en el lenguaje de programación *Python*, el cual describa y grafique una señal de potencia.
 
-4.  Desarrolle un de Scritps en el lenguaje de programación PYTHON, el cual describa y grafique una señal de energía.
+4.  Desarrolle un de scripts en el lenguaje de programación *Python*, el cual describa y grafique una señal de energía.
 
 ## Resolución
 
-[Notebook](./tp1.ipynb)
+[Jupyter Notebook](./tp1.ipynb)
